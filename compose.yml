@@ -3,22 +3,27 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # --- ДОБАВЬТЕ ЭТИ СТРОКИ СЮДА ---
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    # --------------------------------
     volumes:
       - .:/var/www
     environment:
       - DB_HOST=db
-      - DB_NAME=gogo_db
-      - DB_USER=user_name
-      - DB_PASSWORD=user_password
+      - DB_NAME=bot_db
+      - DB_USER=bot_user
+      - DB_PASSWORD=bot_pass
     ports:
-      - "8080:8080" # Откроем порт для проверки Slim в браузере
+      - "8080:8080"
 
   db:
     image: postgres:16-alpine
     environment:
-      - POSTGRES_DB=gogo_db
-      - POSTGRES_USER=user_name
-      - POSTGRES_PASSWORD=user_password
+      - POSTGRES_DB=bot_db
+      - POSTGRES_USER=bot_user
+      - POSTGRES_PASSWORD=bot_pass
     ports:
       - "5432:5432"
     volumes:
