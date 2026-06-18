@@ -3,27 +3,26 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # --- ДОБАВЬТЕ ЭТИ СТРОКИ СЮДА ---
     dns:
       - 8.8.8.8
       - 8.8.4.4
-    # --------------------------------
     volumes:
       - .:/var/www
     environment:
-      - DB_HOST=db
-      - DB_NAME=bot_db
-      - DB_USER=bot_user
-      - DB_PASSWORD=bot_pass
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - TG_TOKEN=${TG_TOKEN}
     ports:
       - "8080:8080"
 
   db:
     image: postgres:16-alpine
     environment:
-      - POSTGRES_DB=bot_db
-      - POSTGRES_USER=bot_user
-      - POSTGRES_PASSWORD=bot_pass
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - "5432:5432"
     volumes:

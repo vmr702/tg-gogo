@@ -55,6 +55,42 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'graham-campbell/result-type' => array(
+            'pretty_version' => 'v1.1.4',
+            'version' => '1.1.4.0',
+            'reference' => 'e01f4a821471308ba86aa202fed6698b6b695e3b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../graham-campbell/result-type',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'guzzlehttp/guzzle' => array(
+            'pretty_version' => '7.12.1',
+            'version' => '7.12.1.0',
+            'reference' => 'd34627490fbc03bf5c5d7cfed81f2faa19519425',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/guzzle',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'guzzlehttp/promises' => array(
+            'pretty_version' => '2.5.0',
+            'version' => '2.5.0.0',
+            'reference' => '4360e982f87f5f258bf872d094647791db2f4c8e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/promises',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'guzzlehttp/psr7' => array(
+            'pretty_version' => '2.12.1',
+            'version' => '2.12.1.0',
+            'reference' => '172ef2f4e9824c1e058b7f30be8ae25a02c0f2b7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/psr7',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'illuminate/collections' => array(
             'pretty_version' => 'v10.49.0',
             'version' => '10.49.0.0',
@@ -118,6 +154,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'longman/telegram-bot' => array(
+            'pretty_version' => '0.81.0',
+            'version' => '0.81.0.0',
+            'reference' => 'd9484af72a39e10913a60d2c6c9ceffb61d624d1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../longman/telegram-bot',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'nesbot/carbon' => array(
             'pretty_version' => '2.73.0',
             'version' => '2.73.0.0',
@@ -133,6 +178,15 @@
             'reference' => '181d480e08d9476e61381e04a71b34dc0432e812',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/fast-route',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpoption/phpoption' => array(
+            'pretty_version' => '1.9.5',
+            'version' => '1.9.5.0',
+            'reference' => '75365b91986c2405cf5e1e012c5595cd487a98be',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpoption/phpoption',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -166,6 +220,21 @@
                 0 => '1.1|2.0',
             ),
         ),
+        'psr/http-client' => array(
+            'pretty_version' => '1.0.3',
+            'version' => '1.0.3.0',
+            'reference' => 'bb5906edc1c324c9a05aa0873d40117941e5fa90',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-client',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
         'psr/http-factory' => array(
             'pretty_version' => '1.1.0',
             'version' => '1.1.0.0',
@@ -178,7 +247,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '^1.0',
+                0 => '1.0',
+                1 => '^1.0',
             ),
         ),
         'psr/http-message' => array(
@@ -193,7 +263,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '^1.0 || ^2.0',
+                0 => '1.0',
+                1 => '^1.0 || ^2.0',
             ),
         ),
         'psr/http-server-handler' => array(
@@ -268,6 +339,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/polyfill-ctype' => array(
+            'pretty_version' => 'v1.37.0',
+            'version' => '1.37.0.0',
+            'reference' => '141046a8f9477948ff284fa65be2095baafb94f2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-ctype',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/polyfill-mbstring' => array(
             'pretty_version' => 'v1.38.2',
             'version' => '1.38.2.0',
@@ -309,6 +389,15 @@
             'provided' => array(
                 0 => '2.3|3.0',
             ),
+        ),
+        'vlucas/phpdotenv' => array(
+            'pretty_version' => 'v5.6.3',
+            'version' => '5.6.3.0',
+            'reference' => '955e7815d677a3eaa7075231212f2110983adecc',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../vlucas/phpdotenv',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'voku/portable-ascii' => array(
             'pretty_version' => '2.1.1',
