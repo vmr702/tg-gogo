@@ -22,13 +22,19 @@ class BotService
     public function handleStartCommand(int $chatId): void
     {
         $inline_keyboard = new InlineKeyboard([
-            ['text' => 'Москва', 'callback_data' => 'set_city:Москва'],
-            ['text' => 'Санкт-Петербург', 'callback_data' => 'set_city:СПб'],
+            [
+                'text' => 'Москва', 
+                'callback_data' => 'set_city:Москва'
+            ],
+            [
+                'text' => 'Санкт-Петербург', 
+                'callback_data' => 'set_city:СПб'
+            ],
         ]);
 
         TelegramRequest::sendMessage([
             'chat_id'      => $chatId,
-            'text'         => "Привет! Добро пожаловать в Афишу. Выберите ваш город:",
+            'text'         => "Афиша. Выберите ваш город:",
             'reply_markup' => $inline_keyboard,
         ]);
     }
@@ -72,13 +78,10 @@ class BotService
 
         // ПРАВИЛЬНАЯ ДВУМЕРНАЯ СТРУКТУРА МАССИВА КНОПОК ДЛЯ LONGMAN TG BOT API
         $nextOffset = $offset + 10;
+        
         $keyboard = new InlineKeyboard([
-            [
-                ['text' => '🔄 Показать еще', 'callback_data' => "more_events:$nextOffset"]
-            ],
-            [
-                ['text' => '➕ Создать мероприятие', 'callback_data' => 'add_event']
-            ]
+            ['text' => '🔄 Показать еще', 'callback_data' => "more_events:$nextOffset"],
+            ['text' => '➕ Создать мероприятие', 'callback_data' => 'add_event']
         ]);
 
         TelegramRequest::sendMessage([
