@@ -12,6 +12,12 @@ class User extends Model
         'telegram_id',
         'username',
         'city',
+        'step',
+        'draft_event',
+    ];
+
+    protected $casts = [
+        'draft_event' => 'array',
     ];
 
     public $timestamps = true;
