@@ -20,4 +20,6 @@ $app->get('/', function (Request $request, Response $response) {
     return $response;
 });
 
+$app->post('/webhook/telegram', \App\Controllers\BotController::class . ':handle');
+
 $app->run();
