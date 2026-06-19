@@ -54,13 +54,23 @@ class BotService
         $this->sendEventsList($chatId, $city, 0);
     }
 
-        public function sendEventsList(int $chatId, string $city, int $offset): void
+    public function sendEventsList(int $chatId, string $city, int $offset): void
     {
         // Вытаскиваем мероприятия из СУБД с нужным смещением
         $events = Event::where('city', $city)->orderBy('id', 'asc')->skip($offset)->take(10)->get();
 
         if ($events->isEmpty()) {
-            $this->sendSimpleMessage($chatId, "🎭 Больше мероприятий в городе $city пока нет.");
+            $keyboard = new InlineKeyboard([
+            ['text' => '🔄 Показать еще', 'callback_data' => "more_events:10"],
+            ['text' => '➕ Создать мероприятие', 'callback_data' => 'add_event']
+        ]);
+
+        TelegramRequest::sendMessage([
+            'chat_id'      => $chatId,
+            'text'         => "❌ В городе $city больше нет мероприятий для отображения.",
+            'parse_mode'   => 'Markdown',
+            'reply_markup' => $keyboard,
+        ]);
             return;
         }
 
