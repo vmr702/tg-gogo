@@ -61,16 +61,17 @@ class BotService
 
         if ($events->isEmpty()) {
             $keyboard = new InlineKeyboard([
-            ['text' => '🔄 Показать еще', 'callback_data' => "more_events:10"],
-            ['text' => '➕ Создать мероприятие', 'callback_data' => 'add_event']
-        ]);
+                ['text' => '🔄 Показать еще', 'callback_data' => "more_events:10"],
+                ['text' => '➕ Создать мероприятие', 'callback_data' => 'add_event']
+            ]);
 
-        TelegramRequest::sendMessage([
-            'chat_id'      => $chatId,
-            'text'         => "❌ В городе $city больше нет мероприятий для отображения.",
-            'parse_mode'   => 'Markdown',
-            'reply_markup' => $keyboard,
-        ]);
+            TelegramRequest::sendMessage([
+                'chat_id'      => $chatId,
+                'text'         => "❌ В городе $city больше нет мероприятий для отображения.",
+                'parse_mode'   => 'Markdown',
+                'reply_markup' => $keyboard,
+            ]);
+
             return;
         }
 
